@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @font-face {
+            font-family: cairo;
+            src: url(files/Cairo-Regular.ttf);
+        }
         body{
+            font-family: cairo;
             margin: 0;
-            background-color: darkseagreen;
+            background: url(bg.jpg);
             text-align: center;
         }
         .card{
@@ -18,7 +23,6 @@
             transform: translate(-50%, -50%);
             box-shadow: 0 0 3px 0 black;
             border-radius: 5px;
-            background-color: dodgerblue;
         }
         .input{
             padding: 0.3em;
@@ -27,11 +31,14 @@
             display: inline-block;
             margin: 1em;
             background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid #5882FA;
         }
         input{
+            font-family: cairo;
             border: none;
             outline: none;
-            width: 250px;
+            width: 350px;
+            font-size: 21px;
             text-align: center;
             background: none !important;
             color: white !important;
@@ -39,12 +46,13 @@
         input:focus{
             border: none;
             outline: none;
-            width: 250px;
             text-align: center;
             background: none;
             color: white;
         }
         select{
+            font-family: cairo;
+            font-size: 21px;
             padding: 0.3em;
             font-size: 1.4em;
             box-shadow: 0 0 4px 0 black;
@@ -53,14 +61,17 @@
             background-color: rgba(0, 0, 0, 0.3);
             color: white;
             width: 140px;
+            border: 1px solid #5882FA;
         }
         button{
+            font-family: cairo;
+            font-size: 21px;
             padding: 0.2em 0.7em;
-            background: green;
-            box-shadow: 0 0 3px 0 black;;
+            background: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 3px 0 black;
             font-size: 1.4em;
             outline: none;
-            border: none;
+            border: 1px solid #4ee6eb;
             border-radius: 5px;
             color: white;
             cursor: pointer;
@@ -75,10 +86,13 @@
         <br>
         <select id="plan">
             <option value="0">2 Days</option>
-            <option value="1">1 Month</option>
-            <option value="2">3 Months</option>
-            <option value="3">6 Months</option>
-            <option value="4">12 Months</option>
+            <option value="1">7 Days</option>
+            <option value="2">1 Month</option>
+            <option value="3">2 Months</option>
+            <option value="4">3 Months</option>
+            <option value="5">6 Months</option>
+            <option value="6">8 Months</option>
+            <option value="7">12 Months</option>
         </select>
         <br>
         <button onclick="generate()">Generate</button>
@@ -93,28 +107,35 @@
         function ck(pr1, pr2){
             switch(pr2){
                 case '0':{
-                    console.log(d_s(d_s(d_s(pr1))));
                     return (d_s(d_s(d_s(pr1))));
                     break;
                 }
                 case '1':{
-                    console.log(d_s(d_s(d_s(d_s(pr1)))));
                     return (d_s(d_s(d_s(d_s(pr1)))));
                     break;
                 }
                 case '2':{
-                    console.log(d_s(d_s(d_s(d_s(d_s(pr1))))));
                     return (d_s(d_s(d_s(d_s(d_s(pr1))))));
                     break;
                 }
                 case '3':{
-                    console.log(d_s(d_s(d_s(d_s(d_s(d_s(pr1)))))));
                     return (d_s(d_s(d_s(d_s(d_s(d_s(pr1)))))));
                     break;
                 }
                 case '4':{
-                    console.log(d_s(d_s(d_s(d_s(d_s(d_s(d_s(pr1))))))));
                     return (d_s(d_s(d_s(d_s(d_s(d_s(d_s(pr1))))))));
+                    break;
+                }
+                case '5':{
+                    return (d_s(d_s(d_s(d_s(d_s(d_s(d_s(d_s(pr1)))))))));
+                    break;
+                }
+                case '6':{
+                    return (d_s(d_s(d_s(d_s(d_s(d_s(d_s(d_s(d_s(pr1))))))))));
+                    break;
+                }
+                case '7':{
+                    return (d_s(d_s(d_s(d_s(d_s(d_s(d_s(d_s(d_s(d_s(pr1)))))))))));
                     break;
                 }
             }
